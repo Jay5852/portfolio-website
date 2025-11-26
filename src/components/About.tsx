@@ -91,6 +91,7 @@ export const About = () => {
           <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-cyan-400/30 shadow-xl shadow-cyan-400/10 backdrop-blur-sm">
             <p className="text-gray-300 text-lg leading-relaxed">
               Final-year Electronics and Telecommunication Engineering student with a growing specialization in Data Analytics, Machine Learning, and Python development, combining practical IoT and embedded systems experience with data-driven analytical skills to build real-world, end-to-end technical solutions with meaningful impact.
+            </p>
           </div>
         </motion.div>
 
@@ -107,8 +108,8 @@ export const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {Object.entries(skills).map(([category, data], index) => {
-              const Icon = data.icon;
-              const colors = colorClasses[data.color as keyof typeof colorClasses];
+              const Icon = data.icon as any;
+              const colors = colorClasses[(data.color as keyof typeof colorClasses) || 'cyan'];
 
               return (
                 <motion.div
@@ -116,7 +117,7 @@ export const About = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={isVisible ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className={`group bg-gray-800/30 p-6 rounded-xl border ${colors.border} ${colors.bg} backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg ${colors.glow} ${colors.hoverGlow}`}
+                  className={`group relative bg-gray-800/30 p-6 rounded-xl border ${colors.border} ${colors.bg} backdrop-blur-sm hover:scale-105 transition-all duration-300 shadow-lg ${colors.glow} ${colors.hoverGlow}`}
                 >
                   {/* Icon */}
                   <div className={`w-16 h-16 ${colors.bg} rounded-lg flex items-center justify-center mb-4 border ${colors.border} group-hover:scale-110 transition-transform`}>
@@ -130,10 +131,10 @@ export const About = () => {
 
                   {/* Skills List */}
                   <div className="flex flex-wrap gap-2">
-                    {data.items.map((skill, idx) => (
+                    {data.items.map((skill: string, idx: number) => (
                       <span
                         key={idx}
-                        className={`px-3 py-1 bg-gray-900/50 border ${colors.border} rounded-full text-sm text-gray-300 hover:${colors.bg} transition-colors`}
+                        className={`px-3 py-1 bg-gray-900/50 border ${colors.border} rounded-full text-sm text-gray-300 transition-colors`}
                       >
                         {skill}
                       </span>
@@ -155,3 +156,5 @@ export const About = () => {
     </section>
   );
 };
+
+export default About;
