@@ -72,7 +72,7 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <span className="text-cyan-400 text-lg">Hello, I'm</span>
+            <span className="text-cyan-400 text-lg">Hello, I&apos;m</span>
           </motion.div>
 
           {/* Name with gradient */}

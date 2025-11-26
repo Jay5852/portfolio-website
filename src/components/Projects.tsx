@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { Fingerprint, Mic, Wifi, Lock, X, ExternalLink, TrendingUp } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Fingerprint, Mic, Wifi, Lock, X, ExternalLink, TrendingUp, Database } from 'lucide-react';
+import { motion } from 'framer-motion';
+
 
 const projects = [
   // 1️⃣ IoT Project
@@ -124,8 +125,16 @@ const colorClasses = {
     text: 'text-amber-400',
     bg: 'bg-amber-400/10',
     glow: 'shadow-amber-400/20'
+  },
+  violet: {
+    gradient: 'from-violet-400 to-violet-600',
+    border: 'border-violet-400',
+    text: 'text-violet-400',
+    bg: 'bg-violet-400/10',
+    glow: 'shadow-violet-400/20'
   }
 };
+
 
 export const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -151,13 +160,28 @@ export const Projects = () => {
 
   const openProject = (projectId: number) => {
     setSelectedProject(projectId);
-    document.body.style.overflow = 'hidden';
   };
 
   const closeProject = () => {
     setSelectedProject(null);
-    document.body.style.overflow = 'auto';
   };
+
+  // Keep body scroll locked while a project modal is open.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // Only run when a project is opened
+    if (selectedProject !== null) {
+      const original = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      return () => {
+        document.body.style.overflow = original || '';
+      };
+    }
+
+    return;
+  }, [selectedProject]);
 
   const selectedProjectData = projects.find(p => p.id === selectedProject);
 
@@ -181,7 +205,8 @@ export const Projects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => {
             const Icon = project.icon;
-            const colors = colorClasses[project.color as keyof typeof colorClasses];
+            const colors = (colorClasses[project.color as keyof typeof colorClasses]) || colorClasses['cyan'];
+
 
             return (
               <motion.div
