@@ -3,9 +3,9 @@ import { Code2, Database, Wrench, Brain } from 'lucide-react';
 import { motion } from 'motion/react';
 
 const skills = {
-  'Programming Languages': {
+  'Programming & Analytics': {
     icon: Code2,
-    items: ['Python', 'SQL', 'C++', 'Embedded C'],
+    items: ['Python', 'SQL', 'C++', 'Data Structures and Algorithms', 'Embedded C', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Power BI'],
     color: 'cyan'
   },
   'Tools and Platforms': {
@@ -13,9 +13,9 @@ const skills = {
     items: ['JupyterLab', 'MySQL', 'Git', 'GitHub', 'Adafruit IO', 'Arduino IDE'],
     color: 'emerald'
   },
-  'Learning': {
+  'IoT & EMBEDDED': {
     icon: Brain,
-    items: ['Data Structures and Algorithms (C++)', 'Machine Learning', 'NumPy', 'Pandas', 'Matplotlib'],
+    items: ['Arduino', 'ESP32/ESP8266', 'Embedded C', 'Sensors & Modules', 'IoT Dashboards'],
     color: 'amber'
   }
 };
@@ -90,8 +90,7 @@ export const About = () => {
         >
           <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-cyan-400/30 shadow-xl shadow-cyan-400/10 backdrop-blur-sm">
             <p className="text-gray-300 text-lg leading-relaxed">
-              Final-year Electronics and Telecommunication Engineering student with practical experience in IoT and Embedded Systems. Currently exploring Machine Learning and Python libraries. Seeking an entry-level or internship role to apply skills in real-world technology projects and contribute to impactful innovations.
-            </p>
+              Final-year Electronics and Telecommunication Engineering student with a growing specialization in Data Analytics, Machine Learning, and Python development, combining practical IoT and embedded systems experience with data-driven analytical skills to build real-world, end-to-end technical solutions with meaningful impact.
           </div>
         </motion.div>
 

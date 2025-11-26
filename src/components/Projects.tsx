@@ -3,6 +3,7 @@ import { Fingerprint, Mic, Wifi, Lock, X, ExternalLink, TrendingUp } from 'lucid
 import { motion } from 'motion/react';
 
 const projects = [
+  // 1️⃣ IoT Project
   {
     id: 1,
     title: "Attendify – IoT-Based Biometric Attendance System",
@@ -15,8 +16,24 @@ const projects = [
     achievement: "80% reduction in manual attendance time",
     link: null
   },
+
+  // 2️⃣ Data Project
   {
     id: 2,
+    title: "Retail Sales Analysis",
+    period: "2025",
+    icon: TrendingUp,
+    color: 'emerald',
+    shortDesc: "EDA on retail sales data to find trends and customer behavior",
+    fullDesc: "Analyzed retail sales data using Python, Pandas, Seaborn, and Power BI to uncover customer purchasing behavior, high-performing products, seasonal trends, and revenue insights through end-to-end exploratory data analysis and dashboard creation.",
+    technologies: ["Python", "Pandas", "Seaborn", "Power BI", "Excel", "EDA"],
+    achievement: "Identified top 10 revenue-driving products improving decision speed",
+    link: "#"
+  },
+
+  // 3️⃣ IoT / AI Project
+  {
+    id: 3,
     title: "Jarvis AI Virtual Assistant",
     period: "2025",
     icon: Mic,
@@ -27,8 +44,24 @@ const projects = [
     achievement: "70% improvement in task completion speed",
     link: "#"
   },
+
+  // 4️⃣ Data Project
   {
-    id: 3,
+    id: 4,
+    title: "Global Debt Analysis",
+    period: "2024",
+    icon: Database,
+    color: 'violet',
+    shortDesc: "Explored international debt data for economic insights",
+    fullDesc: "Explored international debt datasets using Python, Pandas, Matplotlib, and Excel by cleaning macroeconomic indicators, identifying top debtor nations, visualizing long-term financial trends, detecting global economic patterns, and deriving insights for policy analysis.",
+    technologies: ["Python", "Pandas", "Matplotlib", "Excel"],
+    achievement: "Revealed 20-year patterns in global debt growth",
+    link: "#"
+  },
+
+  // 5️⃣ IoT Project
+  {
+    id: 5,
     title: "IoT Cable Fault Detection",
     period: "2025",
     icon: Wifi,
@@ -39,8 +72,24 @@ const projects = [
     achievement: "±1 km accuracy, 60% reduction in fault isolation time",
     link: "#"
   },
+
+  // 6️⃣ Data Project
   {
-    id: 4,
+    id: 6,
+    title: "Financial Time Series Insights",
+    period: "2024",
+    icon: TrendingUp,
+    color: 'cyan',
+    shortDesc: "Stock market trend and volatility analysis",
+    fullDesc: "Conducted stock market time series analysis using Python, yfinance, Pandas, and Matplotlib by generating moving averages, volatility tracking, price trend comparisons, and daily return analytics to identify patterns and short-term predictability.",
+    technologies: ["Python", "yfinance", "Pandas", "Matplotlib", "Time Series Analysis"],
+    achievement: "Improved trend detection accuracy using SMA/EMA",
+    link: "#"
+  },
+
+  // 7️⃣ IoT Project
+  {
+    id: 7,
     title: "Smart Door Lock",
     period: "2024",
     icon: Lock,
@@ -52,6 +101,7 @@ const projects = [
     link: null
   }
 ];
+
 
 const colorClasses = {
   cyan: {

@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 export const Hero = () => {
   const [displayText, setDisplayText] = useState('');
-  const fullText = 'IoT & Embedded Systems Specialist';
+  const fullText = 'Engineering Student | Data, Software, and IoT Projects';
 
   useEffect(() => {
     let index = 0;
