@@ -149,7 +149,7 @@ export const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-emerald-400 mx-auto mb-4"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            I'm currently seeking entry-level or internship opportunities. Feel free to reach out!
+            I&apos;m currently seeking entry-level or internship opportunities. Feel free to reach out!
           </p>
         </motion.div>
 
@@ -355,7 +355,7 @@ export const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-emerald-400/10 border border-emerald-400 rounded-lg text-emerald-400 text-center"
                 >
-                  Thank you for your message! I'll get back to you soon.
+                  Thank you for your message! I&apos;ll get back to you soon.
                 </motion.div>
               )}
             </form>

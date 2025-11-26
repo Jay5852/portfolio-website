@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
-import { Code2, Database, Wrench, Brain } from 'lucide-react';
-import { motion } from 'motion/react';
+import { useState, useEffect, useRef, type ComponentType, type SVGProps } from 'react';
+import { Code2, Wrench, Brain } from 'lucide-react';
+import { motion } from 'framer-motion';
+
 
 const skills = {
   'Programming & Analytics': {
@@ -108,7 +109,7 @@ export const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {Object.entries(skills).map(([category, data], index) => {
-              const Icon = data.icon as any;
+              const Icon = data.icon as ComponentType<SVGProps<SVGSVGElement>>;
               const colors = colorClasses[(data.color as keyof typeof colorClasses) || 'cyan'];
 
               return (
